@@ -1,6 +1,6 @@
 require 'http'
 require 'json'
-require 'pry'
+require 'pry-byebug'
 require 'dotenv'
 require 'faye/websocket'
 require 'eventmachine'
