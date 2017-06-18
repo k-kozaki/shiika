@@ -29,19 +29,19 @@ EM.run do
     data = JSON.parse(event.data)
     p [:message, data]
 
-    if data['text'] == 'こんにちは'
+    if data['text'] == 'こんばんは'
       ws.send({
         type: 'message',
-        text: "<@#{data['user']}>\nちね",
+        text: "<@#{data['user']}>こんばんわ",
         channel: data['channel']
         }.to_json)
     end
   end
 
   # 接続が切断した時の処理
-  ws.on :close do
-    p [:close, event.code]
-    ws = nil
-    EM.stop
-  end
+  # ws.on :close do
+  #   p [:close, event.code]
+  #   ws = nil
+  #   EM.stop
+  # end
 end
